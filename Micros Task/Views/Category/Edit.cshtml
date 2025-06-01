@@ -1,0 +1,15 @@
+﻿@model Category
+<form asp-action="Edit" asp-controller="Category" method="post">
+    <div>
+        <input type="hidden" asp-for="Id"/>
+        <lable>Name</lable>
+        <input asp-for="Name" class="form-control" />
+        <lable>Type</lable>
+        <select asp-for="Type" class="form-select">
+            <option selected disabled>Choose one</option>
+            <option value="1">Cash receipt</option>
+            <option value="2">Cash expense</option>
+        </select>
+        <button type="submit" class="btn btn-primary mt-3">Save</button>
+    </div>
+</form>

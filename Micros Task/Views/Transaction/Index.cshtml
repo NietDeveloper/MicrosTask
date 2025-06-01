@@ -1,0 +1,27 @@
+﻿@model List<Transaction>
+<div class="table-responsive">
+    <a type="button" class="btn btn-primary m-3" asp-action="Create" asp-controller="Transaction">Create</a>
+    <table class="table table-striped table-bordered table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>Id</th>
+                <th>Create date</th>
+                <th>Category name</th>
+                <th>Sum</th>
+                <th>Comment</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var transaction in Model)
+            {
+                <tr>
+                    <td>@transaction.Id</td>
+                    <td>@transaction.CreateDate</td>
+                    <td>@transaction.Category.Name</td>
+                    <td>@transaction.Sum.ToString("N0")</td>
+                    <td>@transaction.Comment</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
